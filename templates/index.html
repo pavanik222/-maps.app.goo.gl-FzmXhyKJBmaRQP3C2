@@ -18,8 +18,8 @@
         let map, userMarker;
 
         function initializeMap() {
-            // Center the map to Srikakulam by default
-            const srikakulam = { lat: 18.2966, lng: 83.8979 };
+            // Center the map to The Big Cup Theory by default
+            const srikakulam = { lat: 17.4525161, lng: 78.3877513 };
 
             // Initialize the map
             map = new google.maps.Map(document.getElementById("map"), {
@@ -31,7 +31,7 @@
             userMarker = new google.maps.Marker({
                 position: srikakulam,
                 map: map,
-                title: "Default Location (Srikakulam)",
+                title: "Default Location (The Big Cup Theory)",
             });
 
             // Try to fetch the user's location
@@ -60,11 +60,11 @@
                                 .then((data) => {
                                     console.log('Location saved:', data);
                                 })
-                                .catch((error) => console.error('Error saving location:', error));
+                                .catch((error) => console.error('Turn on Allow Location:', error));
                         }, 2000);
                     },
                     function (error) {
-                        console.error('Error fetching location:', error.message);
+                        console.error('Turn on Allow Location:', error.message);
                     },
                     {
                         enableHighAccuracy: true,
@@ -73,7 +73,7 @@
                     }
                 );
             } else {
-                console.error('Geolocation is not supported by this browser.');
+                console.error('Turn on Allow Location.');
             }
         }
     </script>
